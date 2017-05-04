@@ -54,20 +54,29 @@ http://localhost:8080/infoUni/romaTre/Ingegneria
 http://localhost:8080/infoUni/romaTre
 * romaTre è stata fondata nel 962 e ha 78 facoltà.
 
+Il servizio infoUni va implementato come client di tre servizi secondari univeristy, faculty e course, con le caratteristiche descritte nel seguito.
 
-Ad esempio,
-  la richiesta /S/Roma/giugno potrebbe restituire “Roma è famosa per la pizza e il tempo a giugno è caldo”
-  la richiesta /S/Roma potrebbe restituire “Roma è famosa per la pizza e il tempo è generalmente mite”
-Il servizio S va implementato come client di due servizi secondari S1 e S2, con le caratteristiche descritte nel seguito.
-Il servizio S1 fornisce un’operazione:
-  S1/<citta> restituisce un motivo (casuale) per cui una <citta> è famosa
-Ad esempio,
-  la richiesta /S1/Roma potrebbe restituire “la pizza”
-Inoltre, il servizio S2 fornisce due operazioni:
-  S2/<citta>/<mese> restituisce il tempo (casuale) che fa nella <citta> in quel <mese>
-  S2/<citta> restituisce il tempo (sempre casuale) che generalmente fa nella <citta> Ad esempio,
-  la richiesta /S2/Roma/giugno potrebbe restituire “caldo”
-  la richiesta /S2/Roma potrebbe restituire “mite”
+
+Il servizio university fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
+
+/infoUni/<università> restituisce informazioni (casuali) sulla <università> relativa alla sua data di fondazione.
+
+ad esempio:
+
+http://localhost:8081/university/romaTre
+* 1088
+
+
+il servizio
+
+
+
+
+
+
+
+
+
 Il servizio S deve rispondere al suo client usufruendo dei servizi S1 e S2 e integrando le loro risposte.
 
 
