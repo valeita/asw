@@ -43,16 +43,16 @@ Il servizio principale infoUni fornisce informazioni relative ad università, fa
 
 /infoUni/<università> restituisce invece informazioni (casuali) sulla <università>, e informazioni (sempre casuali) generiche per le facoltà contenute in quella <università>.
 
-ad esempio :
+ad esempio:
 
 http://localhost:8080/infoUni/romaTre/Ingegneria/Architetture
-romaTre è stata fondata nel 1088, Ingegneria ha un piano di studi di 13 esami con Architetture avente 6 crediti.
+* romaTre è stata fondata nel 1088, Ingegneria ha un piano di studi di 13 esami con Architetture avente 6 crediti.
 
 http://localhost:8080/infoUni/romaTre/Ingegneria
-romaTre è stata fondata nel 1088 e Ingegneria ha un piano di studi di 15 esami per un totale di 150 crediti.
+* romaTre è stata fondata nel 1088 e Ingegneria ha un piano di studi di 15 esami per un totale di 150 crediti.
 
 http://localhost:8080/infoUni/romaTre
-romaTre è stata fondata nel 962 e ha 78 facoltà.
+* romaTre è stata fondata nel 962 e ha 78 facoltà.
 
 
 Ad esempio,
