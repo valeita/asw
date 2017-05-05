@@ -35,7 +35,9 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
 ## Casi d'uso:
 
 
-Il servizio principale **infoUni** fornisce informazioni (casuali) relative ad università, facoltà e corsi ai suoi client. Il servizio infoUni fornisce tre operazioni:
+### Il servizio principali InfoUni:
+
+Il servizio principale infoUni fornisce informazioni (casuali) relative ad università, facoltà e corsi ai suoi client. Il servizio infoUni fornisce tre operazioni:
 
 /_infoUni_/<_università>_/<_facoltà_>/<_corso_> restituisce informazioni (casuali) sulla <_università_>, e informazioni(sempre casuali) per quella <_facoltà_> e per quel <_corso_>.
 
@@ -57,7 +59,9 @@ http://localhost:8080/infoUni/romaTre
 Il servizio infoUni va implementato come client di tre servizi secondari univeristy, faculty e course, con le caratteristiche descritte nel seguito.
 
 
-Il servizio **university** fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
+### Il sottoservizio University:
+
+Il servizio university fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
 
 /_infoUni_/<_università_> restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
 
@@ -67,7 +71,9 @@ http://localhost:8081/university/romaTre
 * 1088
 
 
-il servizio **faculty** fornisce informazioni (sempre casuali) relative alle facoltà presenti in una certa università, e al loro numero di esami. il servizio faculty fornisce due operazioni:
+### Il sottoservizio Faculty:
+
+il servizio faculty fornisce informazioni (sempre casuali) relative alle facoltà presenti in una certa università, e al loro numero di esami. il servizio faculty fornisce due operazioni:
 
 /_faculty_/<_università_> restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa <_università_>.
 
@@ -82,8 +88,9 @@ http://localhost:8082/faculty/romaTre/Ingegneria
 * 13
 
 
+### Il sottoservizio Course:
 
-il servizio **course** fornisce informazioni (sempre casuali) relative ai corsi presenti in una certa università o facoltà. il servizio faculty fornisce due operazioni:
+il servizio course fornisce informazioni (sempre casuali) relative ai corsi presenti in una certa università o facoltà. il servizio faculty fornisce due operazioni:
 
 /_course_/<_università_>/<_facoltà_> restituisce informazioni (casuali) sul numero dei crediti totali di una certa <_facoltà_>.
 
