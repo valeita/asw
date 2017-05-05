@@ -35,7 +35,7 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
 ## Casi d'uso:
 
 
-Il servizio principale infoUni fornisce informazioni relative ad università, facoltà (casuali) ai suoi client. Il servizio infoUni fornisce tre operazioni:
+Il servizio principale ***infoUni*** fornisce informazioni (casuali) relative ad università, facoltà e corsi ai suoi client. Il servizio infoUni fornisce tre operazioni:
 
 /infoUni/<università>/<facoltà>/<corso> restituisce informazioni (casuali) sulla <università>, e informazioni(sempre casuali) per quella <facoltà> e per quel <corso>.
 
@@ -57,7 +57,7 @@ http://localhost:8080/infoUni/romaTre
 Il servizio infoUni va implementato come client di tre servizi secondari univeristy, faculty e course, con le caratteristiche descritte nel seguito.
 
 
-Il servizio university fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
+Il servizio ***university*** fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
 
 /infoUni/<università> restituisce informazioni (casuali) sulla <università> relativa alla sua data di fondazione.
 
@@ -67,44 +67,35 @@ http://localhost:8081/university/romaTre
 * 1088
 
 
-il servizio
+il servizio ***faculty*** fornisce informazioni (sempre casuali) relative alle facoltà presenti in una certa università, e al loro numero di esami. il servizio faculty fornisce due operazioni:
 
+/faculty/<università> restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa università.
 
+/faculty/<università>/<facoltà> restituisce informazioni (casuali) sul numero degli esami presenti in una certa facoltà.
 
+ad esempio:
 
-
-
-
-
-
-Il servizio S deve rispondere al suo client usufruendo dei servizi S1 e S2 e integrando le loro risposte.
-
-
-
-http://localhost:8080/infoUni/romaTre/Ingegneria/Architetture
-romaTre è stata fondata nel 1088, Ingegneria ha un piano di studi di 13 esami con Architetture avente 6 crediti.
-
-http://localhost:8080/infoUni/romaTre/Ingegneria
-romaTre è stata fondata nel 1088 e Ingegneria ha un piano di studi di 15 esami per un totale di 150 crediti.
-
-http://localhost:8080/infoUni/romaTre
-romaTre è stata fondata nel 962 e ha 78 facoltà.
-
-università
-http://localhost:8081/university/romaTre
-1088
-
-facoltà
 http://localhost:8082/faculty/romaTre
-78 (numero delle facoltà presenti a romatre)
+* 78
 
 http://localhost:8082/faculty/romaTre/Ingegneria
-13 (esami)
+* 13
 
-Corso
+
+
+il servizio ***course*** fornisce informazioni (sempre casuali) relative ai corsi presenti in una certa università o facoltà. il servizio faculty fornisce due operazioni:
+
+/course/<università>/<facoltà> restituisce informazioni (casuali) sul numero dei crediti totali di una certa facoltà.
+
+/course/<università>/<facoltà>/<corso> restituisce informazioni (casuali) sul numero dei crediti di un certo corso.
+
+ad esempio:
 
 http://localhost:8083/course/romaTre/Ingegneria
-180(crediti totali della facoltà di ingegneria)
+* 180
 
 http://localhost:8083/course/romaTre/Ingegneria/Architetture
-6(crediti)
+* 6
+
+
+Il servizio infoUni deve rispondere al suo client usufruendo dei servizi university, faculty e course integrando le loro risposte.
