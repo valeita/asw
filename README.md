@@ -37,11 +37,11 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
 
 Il servizio principale ***infoUni*** fornisce informazioni (casuali) relative ad università, facoltà e corsi ai suoi client. Il servizio infoUni fornisce tre operazioni:
 
-/infoUni/<università>/<facoltà>/<_corso_> restituisce informazioni (casuali) sulla <università>, e informazioni(sempre casuali) per quella <facoltà> e per quel <corso>.
+/_infoUni_/<_università>_/<_facoltà_>/<_corso_> restituisce informazioni (casuali) sulla <_università_>, e informazioni(sempre casuali) per quella <_facoltà_> e per quel <_corso_>.
 
-/infoUni/<università>/<facoltà> restituisce invece informazioni (casuali) sulla <università>, e informazioni (sempre casuali) generiche per quella <facoltà> includendo il totale dei crediti che comprende tale <facoltà>.
+/_infoUni_/<_università_>/<_facoltà_> restituisce invece informazioni (casuali) sulla <_università_>, e informazioni (sempre casuali) generiche per quella <_facoltà_> includendo il totale dei crediti che comprende tale <_facoltà_>.
 
-/infoUni/<università> restituisce invece informazioni (casuali) sulla <università>, e informazioni (sempre casuali) generiche per le facoltà contenute in quella <università>.
+/_infoUni_/<_università_> restituisce invece informazioni (casuali) sulla <_università_>, e informazioni (sempre casuali) generiche per le facoltà contenute in quella <_università_>.
 
 ad esempio:
 
