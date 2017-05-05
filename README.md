@@ -59,7 +59,7 @@ Il servizio infoUni va implementato come client di tre servizi secondari univeri
 
 Il servizio ***university*** fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
 
-/infoUni/<università> restituisce informazioni (casuali) sulla <università> relativa alla sua data di fondazione.
+/_infoUni_/<_università_> restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
 
 ad esempio:
 
@@ -69,9 +69,9 @@ http://localhost:8081/university/romaTre
 
 il servizio ***faculty*** fornisce informazioni (sempre casuali) relative alle facoltà presenti in una certa università, e al loro numero di esami. il servizio faculty fornisce due operazioni:
 
-/faculty/<università> restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa università.
+/_faculty_/<_università_> restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa <_università_>.
 
-/faculty/<università>/<facoltà> restituisce informazioni (casuali) sul numero degli esami presenti in una certa facoltà.
+/_faculty_/<_università_>/<_facoltà_> restituisce informazioni (casuali) sul numero degli esami presenti in una certa <_facoltà_>.
 
 ad esempio:
 
@@ -85,9 +85,9 @@ http://localhost:8082/faculty/romaTre/Ingegneria
 
 il servizio ***course*** fornisce informazioni (sempre casuali) relative ai corsi presenti in una certa università o facoltà. il servizio faculty fornisce due operazioni:
 
-/course/<università>/<facoltà> restituisce informazioni (casuali) sul numero dei crediti totali di una certa facoltà.
+/_course_/<_università_>/<_facoltà_> restituisce informazioni (casuali) sul numero dei crediti totali di una certa <_facoltà_>.
 
-/course/<università>/<facoltà>/<corso> restituisce informazioni (casuali) sul numero dei crediti di un certo corso.
+/_course_/<_università_>/<_facoltà_>/<_corso_> restituisce informazioni (casuali) sul numero dei crediti di un certo <_corso_>.
 
 ad esempio:
 
