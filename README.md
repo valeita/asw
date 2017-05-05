@@ -1,6 +1,20 @@
 # ASW
 Repository di Architetture Software
 
+## Descrizione del progetto:
+
+Lo scopo di questo primo progetto è la realizzazione di una semplice applicazione distribuita, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
+
+In particolare, il progetto deve essere composto almeno da:
+ * Un servizio principale S, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
+* Due o più servizi secondari (S1, S2, ...), che possono ricevere richieste dal servizio principale S e che possono scambiarsi richieste tra di loro.
+  
+In questo primo progetto, i diversi servizi vanno mandati in esecuzione tutti in uno stesso nodo (host), ma in application server Tomcat separati, collegati a porte diverse. In particolare, il servizio principale S andrà esposto sulla porta 8080, i servizi secondari sulle porte 8081, 8082, ...
+
+Il progetto andrà realizzato usando Spring Boot. Ciascuno dei servizi dovrà essere realizzato come una applicazione Spring Boot separata.
+
+Ciascun servizio dovrà essere realizzato come una applicazione separata e indipendente dagli altri servizi.
+
 ## Info generali:
 
 Il progetto è costituito da una cartella principale "Architecture's Software Project".
