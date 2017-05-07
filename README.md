@@ -17,7 +17,7 @@ Ciascun servizio dovrà essere realizzato come una applicazione separata e indip
 
 ## Info generali:
 
-Il progetto è costituito da una cartella principale "Architecture's Software Project".
+Il progetto è costituito da una cartella principale "Software Architecture's Project".
 Al suo interno sono contenute quattro sotto-cartelle:
 
 * "InfoUniService", contenente il servizio principale dell'applicazione.
