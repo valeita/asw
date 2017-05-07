@@ -1,5 +1,5 @@
 # ASW
-Repository di #Architetture Software
+Repository di Architetture Software
 
 ## Descrizione del progetto:
 
@@ -53,11 +53,11 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
 
 Il servizio principale infoUni fornisce informazioni (casuali) relative ad università, facoltà e corsi ai suoi client. Il servizio infoUni fornisce tre operazioni:
 
-/_infoUni_/<_università>_/<_facoltà_>/<_corso_> restituisce informazioni (casuali) sulla <_università_>, e informazioni(sempre casuali) per quella <_facoltà_> e per quel <_corso_>.
+**/_infoUni_/<_università>_/<_facoltà_>/<_corso_>** restituisce informazioni (casuali) sulla <_università_>, e informazioni(sempre casuali) per quella <_facoltà_> e per quel <_corso_>.
 
-/_infoUni_/<_università_>/<_facoltà_> restituisce invece informazioni (casuali) sulla <_università_>, e informazioni (sempre casuali) generiche per quella <_facoltà_> includendo il totale dei crediti che comprende tale <_facoltà_>.
+**/_infoUni_/<_università_>/<_facoltà_>** restituisce invece informazioni (casuali) sulla <_università_>, e informazioni (sempre casuali) generiche per quella <_facoltà_> includendo il totale dei crediti che comprende tale <_facoltà_>.
 
-/_infoUni_/<_università_> restituisce invece informazioni (casuali) sulla <_università_>, e informazioni (sempre casuali) generiche per le facoltà contenute in quella <_università_>.
+**/_infoUni_/<_università_>** restituisce invece informazioni (casuali) sulla <_università_>, e informazioni (sempre casuali) generiche per le facoltà contenute in quella <_università_>.
 
 ad esempio:
 
@@ -77,7 +77,7 @@ Il servizio infoUni va implementato come client di tre servizi secondari univeri
 
 Il servizio university fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
 
-/_infoUni_/<_università_> restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
+**/_infoUni_/<_università_>** restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
 
 ad esempio:
 
@@ -89,9 +89,9 @@ http://localhost:8081/university/romaTre
 
 il servizio faculty fornisce informazioni (sempre casuali) relative alle facoltà presenti in una certa università, e al loro numero di esami. il servizio faculty fornisce due operazioni:
 
-/_faculty_/<_università_> restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa <_università_>.
+**/_faculty_/<_università_>** restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa <_università_>.
 
-/_faculty_/<_università_>/<_facoltà_> restituisce informazioni (casuali) sul numero degli esami presenti in una certa <_facoltà_>.
+**/_faculty_/<_università_>/<_facoltà_>** restituisce informazioni (casuali) sul numero degli esami presenti in una certa <_facoltà_>.
 
 ad esempio:
 
@@ -106,9 +106,9 @@ http://localhost:8082/faculty/romaTre/Ingegneria
 
 il servizio course fornisce informazioni (sempre casuali) relative ai corsi presenti in una certa università o facoltà. il servizio faculty fornisce due operazioni:
 
-/_course_/<_università_>/<_facoltà_> restituisce informazioni (casuali) sul numero dei crediti totali di una certa <_facoltà_>.
+**/_course_/<_università_>/<_facoltà_>** restituisce informazioni (casuali) sul numero dei crediti totali di una certa <_facoltà_>.
 
-/_course_/<_università_>/<_facoltà_>/<_corso_> restituisce informazioni (casuali) sul numero dei crediti di un certo <_corso_>.
+**/_course_/<_università_>/<_facoltà_>/<_corso_>** restituisce informazioni (casuali) sul numero dei crediti di un certo <_corso_>.
 
 ad esempio:
 
