@@ -1,5 +1,5 @@
 # ASW
-‛Repository di Architetture Software‛
+‛Repository di Architetture Software'
 
 ## Descrizione del progetto:
 
