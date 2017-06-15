@@ -19,7 +19,7 @@ public class CourseServiceController {
 	private final Logger logger = Logger.getLogger("architectureSoftware"); 
 
 	@RequestMapping("course/{university}/{faculty}")
-	public String getFacultyInfo(@PathVariable String faculty) {
+	public String getFacultyInfo(@PathVariable String university, @PathVariable String faculty) {
 		
 		String[] infoArray = facInfo.split(",");
 		int i = (int) (Math.round(Math.random()*(infoArray.length-1)));
@@ -29,7 +29,7 @@ public class CourseServiceController {
 	}
 
 	@RequestMapping("course/{university}/{faculty}/{course}")
-	public String getCourseInfo(@PathVariable String faculty,@PathVariable String course) {
+	public String getCourseInfo(@PathVariable String university,@PathVariable String faculty,@PathVariable String course) {
 		
 		String[] infoArray = couInfo.split(",");
 		int i = (int) (Math.round(Math.random()*(infoArray.length-1)));
