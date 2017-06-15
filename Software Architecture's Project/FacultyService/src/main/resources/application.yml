@@ -5,7 +5,11 @@ spring:
     name: faculty
 facInfo: 15,13,12
 uniInfo: 17,43,24,78,6
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
 server: 
-  port: 8082
+  port: ${PORT:${SERVER_PORT:0}}
   
 

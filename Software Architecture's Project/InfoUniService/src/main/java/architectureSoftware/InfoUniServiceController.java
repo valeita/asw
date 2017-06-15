@@ -7,7 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 
 import java.util.logging.Logger; 
 
@@ -16,14 +22,17 @@ public class InfoUniServiceController {
 
 	private final Logger logger = Logger.getLogger("architectureSoftware"); 
 
-	@Value("${info.university.uri}") 
-	private String universityUri;
-
-	@Value("${info.faculty.uri}") 
-	private String facultyUri;
-
-	@Value("${info.course.uri}") 
-	private String courseUri;
+//	@Value("${info.university.uri}") 
+//	private String universityUri;
+//
+//	@Value("${info.faculty.uri}") 
+//	private String facultyUri;
+//
+//	@Value("${info.course.uri}") 
+//	private String courseUri;
+	
+	@Autowired
+	private DiscoveryClient discoveryClient;
 
 	@RequestMapping("/infoUni/{university}")
 	public String getInfoUni(@PathVariable String university) {
@@ -56,19 +65,30 @@ public class InfoUniServiceController {
 	private String getInfo(String uri) {
 		return new RestTemplate().getForObject(uri,String.class);
 	}	
+	
+	private String getService(String service){
+		List<ServiceInstance> list=discoveryClient.getInstances(service);
+		if (list!=null && list.size()>0){
+			URI uri = list.get(0).getUri();
+			if(uri!=null){
+				return uri.toString();
+			}
+		}
+		return null;
+	}
 
 	private String getUniversity(String names) {
-		String unUri=universityUri+names;
-		return getInfo(unUri);
+		String universityUri=getService("university")+"university/"+names;
+		return getInfo(universityUri);
 	}	
 
 	private String getFaculty(String names) {
-		String faUri=facultyUri+names;
-		return getInfo(faUri);
+		String facultyUri=getService("faculty")+"faculty/"+names;
+		return getInfo(facultyUri);
 	}	
 
 	private String getCourse(String names) {
-		String coUri=courseUri+names;
-		return getInfo(coUri);
+		String courseUri=getService("course")+"course/"+names;
+		return getInfo(courseUri);
 	}
 }

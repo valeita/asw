@@ -3,9 +3,9 @@
 spring: 
   application: 
     name: infoUni
-info: 
-  university.uri: http://localhost:8081/university/ 
-  faculty.uri: http://localhost:8082/faculty/ 
-  course.uri: http://localhost:8083/course/ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
 server:
   port: 8080
