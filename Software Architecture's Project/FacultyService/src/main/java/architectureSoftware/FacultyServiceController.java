@@ -10,28 +10,28 @@ import java.util.logging.Logger;
 @RestController
 public class FacultyServiceController {
 	
-	@Value("${uniInfo}") 
-	private String uniInfo;
+	@Value("${universityInfo}") 
+	private String universityInfo;
 
-	@Value("${facInfo}") 
-	private String facInfo;
+	@Value("${facultyInfo}") 
+	private String facultyInfo;
 	
 	private final Logger logger = Logger.getLogger("architectureSoftware"); 
 
-	@RequestMapping("faculty/{university}")
+	@RequestMapping("{university}")
 	public String getUniversityInfo(@PathVariable String university) {
 		
-		String[] infoArray = uniInfo.split(",");
+		String[] infoArray = universityInfo.split(",");
 		int i = (int) (Math.round(Math.random()*(infoArray.length-1)));
 		String info = infoArray[i];
 		logger.info("getUniversityInfo(): " + info);
 		return info; 
 	}
 
-	@RequestMapping("faculty/{university}/{faculty}")
+	@RequestMapping("{university}/{faculty}")
 	public String getFacultyInfo(@PathVariable String university,@PathVariable String faculty) {
 		
-		String[] infoArray = facInfo.split(",");
+		String[] infoArray = facultyInfo.split(",");
 		int i = (int) (Math.round(Math.random()*(infoArray.length-1)));
 		String info = infoArray[i];
 		logger.info("getFacultyInfo(): " + info);

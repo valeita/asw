@@ -15,7 +15,7 @@ public class UniversityServiceController {
 	
 	private final Logger logger = Logger.getLogger("architectureSoftware"); 
 
-	@RequestMapping("university/{university}")
+	@RequestMapping("{university}")
 	public String getUniversityInfo(@PathVariable String university) {
 		
 		String[] infoArray = info.split(",");

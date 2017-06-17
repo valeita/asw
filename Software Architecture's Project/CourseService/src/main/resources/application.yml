@@ -3,8 +3,8 @@
 spring:
   application: 
     name: course
-facInfo: 180,150,178
-couInfo: 6,9,12,15
+facultyInfo: 180,150,178
+courseInfo: 6,9,12,15
 eureka:
   client:
     serviceUrl:
