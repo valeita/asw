@@ -43,7 +43,7 @@ services:
       replicas: 1  
   
   infoUni:
-    image: swarm.inf.uniroma3.it:5000/infoUni-9012
+    image: swarm.inf.uniroma3.it:5000/infouni-9012
 #    ports: 
 #    - "8080"
     depends_on:
@@ -51,6 +51,9 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+#forse… l’ho aggiunto a sensazione.
+    ports:
+    - “9012:8080"
 
 
 
