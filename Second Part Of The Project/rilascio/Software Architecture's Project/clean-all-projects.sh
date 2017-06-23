@@ -1,9 +1,10 @@
 #!/bin/bash
 
-gradle clean -b eureka-server/build.gradle 
-gradle clean -b word-service/build.gradle 
-gradle clean -b sentence-service/build.gradle 
-gradle clean -b zuul/build.gradle 
+gradle clean -b EurekaService/build.gradle 
+gradle clean -b CourseService/build.gradle 
+gradle clean -b FacultyService/build.gradle
+gradle clean -b UniversityService/build.gradle 
+gradle clean -b InfoUniService/build.gradle 
 
 
 

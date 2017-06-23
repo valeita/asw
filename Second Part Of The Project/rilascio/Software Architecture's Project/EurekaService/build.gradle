@@ -21,6 +21,11 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	baseName = 'EurekaService'
+	version = '0.0.1-SNAPSHOT'
+}
+
 
 ext {
 	springCloudVersion = 'Dalston.SR1'

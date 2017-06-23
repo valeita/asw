@@ -1,9 +1,10 @@
 #!/bin/bash
 
-gradle build -b eureka-server/build.gradle 
-gradle build -b word-service/build.gradle 
-gradle build -b sentence-service/build.gradle 
-gradle build -b zuul/build.gradle 
+gradle build -b EurekaService/build.gradle 
+gradle build -b CourseService/build.gradle 
+gradle build -b FacultyService/build.gradle
+gradle build -b UniversityService/build.gradle 
+gradle build -b InfoUniService/build.gradle 
 
 
 

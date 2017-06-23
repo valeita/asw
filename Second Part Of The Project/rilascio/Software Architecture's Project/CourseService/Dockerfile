@@ -1,5 +1,5 @@
 ########################################################
-# Dockerfile per l'applicazione sentence / word service 
+# Dockerfile per l'applicazione infoUni
 ########################################################
 
 FROM frolvlad/alpine-oraclejdk8 
