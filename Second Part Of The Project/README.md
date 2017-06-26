@@ -92,8 +92,10 @@ http://localhost:8080/infoUni/romaTre
 Il servizio infoUni va implementato come client di tre servizi secondari univeristy, faculty e course, con le caratteristiche descritte nel seguito.
 
 
-Per quanto riguarda i vari sottoservizi, ora è stato possibile grazie a Zuul, sviluppare l'applicazione garantendo un solo punto di accesso, quello sulla porta 8080 del servizio principale. Questo garantisce che non è possibile invocare le funzionalità dei miei sottoservizi (a meno che non si conosca la porta casuale) in modo diretto.
-è stato aggiunto il prefisso **/_info_** nel file yaml del servizio principale, per distinguere l'invocazione di un sottoservizio rispetto al servizio principale e ogni sottoservizio è inoltre mappato in automatico con **/_Nome_Servizio_**.
+Per quanto riguarda i vari sottoservizi, è stato possibile grazie a Zuul, sviluppare l'applicazione garantendo un solo punto di accesso, quello sulla porta 8080 del servizio principale. Questo garantisce che non è possibile invocare le funzionalità dei miei sottoservizi (a meno che non si conosca la porta casuale) in modo diretto.
+
+è stato aggiunto il prefisso **/_info_** nel file yaml del servizio principale, per distinguere l'invocazione di un sottoservizio rispetto al servizio principale.
+Ogni sottoservizio è inoltre mappato in automatico con **/_Nome_Servizio_**.
 L'invocazione di un sottoservizio tramite Zuul, ha acquisito dunque questa forma **/_info_/_Nome_Sottoservizio_/<..>/<..>/..**
 
 ### Il sottoservizio University:
