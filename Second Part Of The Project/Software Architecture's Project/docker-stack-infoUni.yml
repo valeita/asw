@@ -1,0 +1,57 @@
+version: '3'
+services:
+  eureka:
+    image: swarm.inf.uniroma3.it:5000/eureka-server-img-9012
+#    container_name: eureka 
+#    ports:
+#    - "8761:8761"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  course:
+    image: swarm.inf.uniroma3.it:5000/course-img-9012
+#    ports: 
+#    - "8080"
+    depends_on:
+    - "eureka"
+    deploy:
+      mode: replicated
+      replicas: 1
+    
+  university:
+    image: swarm.inf.uniroma3.it:5000/university-img-9012
+#    ports: 
+#    - "8080"
+    depends_on:
+    - "eureka"
+    deploy:
+      mode: replicated
+      replicas: 1  
+  
+  faculty:
+    image: swarm.inf.uniroma3.it:5000/faculty-img-9012
+#    ports: 
+#    - "8080"
+    depends_on:
+    - "eureka"
+    deploy:
+      mode: replicated
+      replicas: 1  
+  
+  infoUni:
+    image: swarm.inf.uniroma3.it:5000/infouni-img-9012
+#    ports: 
+#    - "8080"
+    depends_on:
+    - "eureka"
+    deploy:
+      mode: replicated
+      replicas: 2
+    ports:
+    - "9012:8080"
+
+
+
+
+

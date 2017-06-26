@@ -1,0 +1,1 @@
+In questa cartella vanno copiati i certificati (.pem). 
