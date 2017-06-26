@@ -3,27 +3,47 @@ Repository di Architetture Software
 
 ## Descrizione del progetto:
 
-Lo scopo di questo primo progetto è la realizzazione di una semplice applicazione distribuita, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
+Lo scopo di questa seconda parte del progetto si occupa della modifica dell' applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
 
-In particolare, il progetto deve essere composto almeno da:
- * Un servizio principale S, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
+La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del progetto Spring Cloud quali:
+1) Eureka, per implementare la funzionalità di service discovery dei servizi.
+2) Ribbon, per implementare le funzionalità di load balancer.
+3) Feign, per semplificare la scrittura del codice, in particolare delle chiamate REST.
+4) Hystrix, per implementare un intermediario il cui scopo è di evitare fallimenti a cascata di servizi.
+5) Zuul, per implementare il mapping tra path/URI dei sottoservizi e il nostro servizio principale.
+
+parte fondamentale per la realizzazione della seconda parte del progetto, è l'utilizzo di dipendenze starter, che permette di utilizzare i strumenti che Spring Cloud che mette a disposizione.
+
+Questa seconda parte del progetto è ancora composta da:
+* Un servizio principale S, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
 * Due o più servizi secondari (S1, S2, ...), che possono ricevere richieste dal servizio principale S e che possono scambiarsi richieste tra di loro.
+* In aggiunta, sarà presente un server Eureka che implementa le funzionalità di service discovery, e permetterà ai vari servizi (S,S1,S2,S3) di scoprirsi tra loro.
   
-In questo primo progetto, i diversi servizi vanno mandati in esecuzione tutti in uno stesso nodo (host), ma in application server Tomcat separati, collegati a porte diverse. In particolare, il servizio principale S è esposto sulla porta 8080, i servizi secondari sulle porte 8081, 8082, ...
+In questo secondo progetto, i diversi servizi vanno ancora mandati in esecuzione tutti in uno stesso nodo (host), ma in application server Tomcat separati, collegati a porte diverse. In particolare, il servizio principale S è esposto sulla porta 8080, i servizi secondari questa volta su delle porte casuali.
+Inoltre, il server Eureka, sarà esposto sulla porta 8761. I vari sottoservizi, pur essendo esposti su porte casuali, riescono a comunicare con il servizio principale grazie a Eureka che permette ai servizi di localizzarsi.
 
-Il progetto andrà realizzato usando Spring Boot. Ciascuno dei servizi è realizzato come una applicazione Spring Boot separata.
+Ciascuno dei servizi è realizzato come una applicazione Spring Boot separata, integrata con il progetto Spring Cloud.
 
 Ciascun servizio è realizzato come una applicazione separata e indipendente dagli altri servizi.
+
+N.B: il codice relativo a Eureka e Ribbon nel servizio principale S è stato lasciato inalterato, e volontariamente non decommentato, cosi come i relativi import vari, in quanto era stato richiesto di mostrare il nostro lavoro riguardante quella parte.
+Infatti il codice è stato modificato e sviluppato in maniera incrementale pur sapendo in anticipo che l'utilizzo di Feign avrebbe permesso la semplificazione del codice a tal punto.
 
 ## Info generali:
 
 Il progetto è costituito da una cartella principale "Software Architecture's Project".
-Al suo interno sono contenute quattro sotto-cartelle:
+Al suo interno sono contenute cinque sotto-cartelle:
 
 * "InfoUniService", contenente il servizio principale dell'applicazione.
 * "CourseService","FacultyService","UniversityService", ciascuna contenente un sottoservizio.
+* "EurekaService", contenente il server Eureka.
 
 ## Build:
+
+Posizionarsi nella cartella principale del servizio EurekaService ed eseguire:
+
+    gradle build
+    ./run-eureka-service.sh
 
 Posizionarsi nella cartella principale del servizio InfoUniService ed eseguire:
 
@@ -47,7 +67,6 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
     
 
 ## Casi d'uso:
-
 
 ### Il servizio principali InfoUni:
 
@@ -73,15 +92,19 @@ http://localhost:8080/infoUni/romaTre
 Il servizio infoUni va implementato come client di tre servizi secondari univeristy, faculty e course, con le caratteristiche descritte nel seguito.
 
 
+Per quanto riguarda i vari sottoservizi, ora è stato possibile grazie a Zuul, sviluppare l'applicazione garantendo un solo punto di accesso, quello sulla porta 8080 del servizio principale. Questo garantisce che non è possibile invocare le funzionalità dei miei sottoservizi (a meno che non si conosca la porta casuale) in modo diretto.
+è stato aggiunto il prefisso **/_/info_>** nel file yaml del servizio principale, per distinguere l'invocazione di un sottoservizio rispetto al servizio principale.
+ogni sottoservizio è inoltre mappato in automatico con **/_Nome_Servizio_>**.
+
 ### Il sottoservizio University:
 
 Il servizio university fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
 
-**/_infoUni_/<_università_>** restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
+**/_info_/<_università_>** restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
 
 ad esempio:
 
-http://localhost:8081/university/romaTre
+http://localhost:8080/info/university/romaTre
 * 1088
 
 
@@ -95,10 +118,10 @@ il servizio faculty fornisce informazioni (sempre casuali) relative alle facolt�
 
 ad esempio:
 
-http://localhost:8082/faculty/romaTre
+http://localhost:8080/info/faculty/romaTre
 * 78
 
-http://localhost:8082/faculty/romaTre/Ingegneria
+http://localhost:8080/info/faculty/romaTre/Ingegneria
 * 13
 
 
@@ -112,10 +135,10 @@ il servizio course fornisce informazioni (sempre casuali) relative ai corsi pres
 
 ad esempio:
 
-http://localhost:8083/course/romaTre/Ingegneria
+http://localhost:8080/info/course/romaTre/Ingegneria
 * 180
 
-http://localhost:8083/course/romaTre/Ingegneria/Architetture
+http://localhost:8080/info/course/romaTre/Ingegneria/Architetture
 * 6
 
 
