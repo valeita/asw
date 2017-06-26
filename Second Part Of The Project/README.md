@@ -6,13 +6,13 @@ Repository di Architetture Software
 Lo scopo di questa seconda parte del progetto si occupa della modifica dell' applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
 
 La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del progetto Spring Cloud quali:
-1) Eureka, per implementare la funzionalità di service discovery dei servizi.
-2) Ribbon, per implementare le funzionalità di load balancer.
-3) Feign, per semplificare la scrittura del codice, in particolare delle chiamate REST.
-4) Hystrix, per implementare un intermediario il cui scopo è di evitare fallimenti a cascata di servizi.
-5) Zuul, per implementare il mapping tra path/URI dei sottoservizi e il nostro servizio principale.
+* Eureka, per implementare la funzionalità di service discovery dei servizi.
+* Ribbon, per implementare le funzionalità di load balancer.
+* Feign, per semplificare la scrittura del codice, in particolare delle chiamate REST.
+* Hystrix, per implementare un intermediario il cui scopo è di evitare fallimenti a cascata di servizi.
+* Zuul, per implementare il mapping tra path/URI dei sottoservizi e il nostro servizio principale.
 
-parte fondamentale per la realizzazione della seconda parte del progetto, è l'utilizzo di dipendenze starter, che permette di utilizzare i strumenti che Spring Cloud che mette a disposizione.
+Parte fondamentale per la realizzazione della seconda parte del progetto, è l'utilizzo di dipendenze starter, che permette di utilizzare i strumenti che Spring Cloud che mette a disposizione.
 
 Questa seconda parte del progetto è ancora composta da:
 * Un servizio principale S, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
@@ -93,14 +93,14 @@ Il servizio infoUni va implementato come client di tre servizi secondari univeri
 
 
 Per quanto riguarda i vari sottoservizi, ora è stato possibile grazie a Zuul, sviluppare l'applicazione garantendo un solo punto di accesso, quello sulla porta 8080 del servizio principale. Questo garantisce che non è possibile invocare le funzionalità dei miei sottoservizi (a meno che non si conosca la porta casuale) in modo diretto.
-è stato aggiunto il prefisso **/_/info_>** nel file yaml del servizio principale, per distinguere l'invocazione di un sottoservizio rispetto al servizio principale.
-ogni sottoservizio è inoltre mappato in automatico con **/_Nome_Servizio_>**.
+è stato aggiunto il prefisso **/_/info_>** nel file yaml del servizio principale, per distinguere l'invocazione di un sottoservizio rispetto al servizio principale e ogni sottoservizio è inoltre mappato in automatico con **/_Nome_Servizio_>**.
+L'invocazione di un sottoservizio tramite Zuul, ha acquisito dunque questa forma **/_info_/<_Nome_Sottoservizio_>/{}/{}/..**
 
 ### Il sottoservizio University:
 
 Il servizio university fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
 
-**/_info_/<_università_>** restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
+**/_info_/_university_/<_università_>** restituisce informazioni (casuali) sulla <_università_> relativa alla sua data di fondazione.
 
 ad esempio:
 
@@ -112,9 +112,9 @@ http://localhost:8080/info/university/romaTre
 
 il servizio faculty fornisce informazioni (sempre casuali) relative alle facoltà presenti in una certa università, e al loro numero di esami. il servizio faculty fornisce due operazioni:
 
-**/_faculty_/<_università_>** restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa <_università_>.
+**/_info_/_faculty_/<_università_>** restituisce informazioni (casuali) sul numero delle facoltà presenti in una certa <_università_>.
 
-**/_faculty_/<_università_>/<_facoltà_>** restituisce informazioni (casuali) sul numero degli esami presenti in una certa <_facoltà_>.
+**/_info_/_faculty_/<_università_>/<_facoltà_>** restituisce informazioni (casuali) sul numero degli esami presenti in una certa <_facoltà_>.
 
 ad esempio:
 
@@ -129,9 +129,9 @@ http://localhost:8080/info/faculty/romaTre/Ingegneria
 
 il servizio course fornisce informazioni (sempre casuali) relative ai corsi presenti in una certa università o facoltà. il servizio faculty fornisce due operazioni:
 
-**/_course_/<_università_>/<_facoltà_>** restituisce informazioni (casuali) sul numero dei crediti totali di una certa <_facoltà_>.
+**/_info_/_course_/<_università_>/<_facoltà_>** restituisce informazioni (casuali) sul numero dei crediti totali di una certa <_facoltà_>.
 
-**/_course_/<_università_>/<_facoltà_>/<_corso_>** restituisce informazioni (casuali) sul numero dei crediti di un certo <_corso_>.
+**/_info_/_course_/<_università_>/<_facoltà_>/<_corso_>** restituisce informazioni (casuali) sul numero dei crediti di un certo <_corso_>.
 
 ad esempio:
 
