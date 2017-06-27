@@ -3,7 +3,7 @@ Repository di Architetture Software
 
 * [Descrizione seconda parte del progetto](#descrizione-seconda-parte-del-progetto)
 * [Build](#build)
-* [Casi d'uso](#casi-d'uso)
+* [Casi d'uso:](#casi-d'uso:)
 
 ## Descrizione seconda parte del progetto:
 
