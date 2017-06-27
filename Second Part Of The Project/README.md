@@ -9,6 +9,8 @@ Repository di Architetture Software
 
 Lo scopo di questa seconda parte del progetto si occupa della modifica dell'applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
 
+## Tecnologie:
+
 La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del progetto Spring Cloud quali:
 * Eureka, per implementare la funzionalità di service discovery dei servizi.
 * Ribbon, per implementare le funzionalità di load balancer.
@@ -17,6 +19,8 @@ La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del 
 * Zuul, per implementare il mapping tra path/URI dei sottoservizi e il nostro servizio principale.
 
 Parte fondamentale per la realizzazione della seconda parte del progetto, è l'utilizzo di dipendenze starter, che permette di utilizzare gli strumenti che Spring Cloud mette a disposizione.
+
+## Applicazione e servizi:
 
 Questa seconda parte del progetto è ancora composta da:
 * Un servizio principale S, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
@@ -69,7 +73,12 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
     gradle build
     ./run-course-service.sh
     
+In alternativa:
 
+Posizionarsi della cartella Software Architecture's Project
+
+    ./build-all-projects.sh
+    
 ## Casi d'uso:
 
 ### Il servizio principali InfoUni:
