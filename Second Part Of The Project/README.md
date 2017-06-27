@@ -1,8 +1,9 @@
 # ASW
 Repository di Architetture Software
 
-* [Descrizione seconda parte del progetto](#Descrizione-seconda-parte-del-progetto)
-
+* [Descrizione seconda parte del progetto](#descrizione-seconda-parte-del-progetto)
+* [Build](#build)
+* [Uso dei servizi](#uso-dei-servizi)
 
 ## Descrizione seconda parte del progetto:
 
