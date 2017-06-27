@@ -172,9 +172,7 @@ A tale scopo, sono state eseguite le seguenti istruzioni:
 1) Scaricare e installare Docker.
 2) Avviare il demone Docker.
 3) Posizionarsi nella cartella Second Part Of The Project ed eseguire i seguenti script.
-    
-    ./build-all-images.sh
-    ./push-all-images.sh
-    ./start-infoUni-stack.sh
 
-
+    ./build-all-projects.sh
+    ./
+    ./
