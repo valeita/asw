@@ -3,7 +3,7 @@ Repository di Architetture Software
 
 ## Descrizione seconda parte del progetto:
 
-Lo scopo di questa seconda parte del progetto si occupa della modifica dell' applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
+Lo scopo di questa seconda parte del progetto si occupa della modifica dell'applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
 
 La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del progetto Spring Cloud quali:
 * Eureka, per implementare la funzionalità di service discovery dei servizi.
@@ -12,7 +12,7 @@ La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del 
 * Hystrix, per implementare un intermediario il cui scopo è di evitare fallimenti a cascata di servizi.
 * Zuul, per implementare il mapping tra path/URI dei sottoservizi e il nostro servizio principale.
 
-Parte fondamentale per la realizzazione della seconda parte del progetto, è l'utilizzo di dipendenze starter, che permette di utilizzare i strumenti che Spring Cloud che mette a disposizione.
+Parte fondamentale per la realizzazione della seconda parte del progetto, è l'utilizzo di dipendenze starter, che permette di utilizzare gli strumenti che Spring Cloud mette a disposizione.
 
 Questa seconda parte del progetto è ancora composta da:
 * Un servizio principale S, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
@@ -95,7 +95,7 @@ Il servizio infoUni va implementato come client di tre servizi secondari univeri
 Per quanto riguarda i vari sottoservizi, è stato possibile grazie a Zuul, sviluppare l'applicazione garantendo un solo punto di accesso, quello sulla porta 8080 del servizio principale. Questo garantisce che non è possibile invocare le funzionalità dei miei sottoservizi (a meno che non si conosca la porta casuale) in modo diretto.
 
 è stato aggiunto il prefisso **/_info_** nel file yaml del servizio principale, per distinguere l'invocazione di un sottoservizio rispetto al servizio principale.
-Ogni sottoservizio è inoltre mappato in automatico con **/_Nome_Servizio_**.
+Ogni sottoservizio è inoltre mappato in automatico in questo modo **/_Nome_Servizio_**.
 L'invocazione di un sottoservizio tramite Zuul, ha acquisito dunque questa forma **/_info_/_Nome_Sottoservizio_/<..>/<..>/..**
 
 ### Il sottoservizio University:
