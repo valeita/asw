@@ -162,24 +162,24 @@ http://localhost:8080/info/course/romaTre/Ingegneria/Architetture
 
 Il servizio infoUni deve rispondere al suo client usufruendo dei servizi university, faculty e course integrando le loro risposte.
 
-## Rilascio:
+### Rilascio:
 
 L'applicazione è stata rilasciata nello swarm dell'università di RomaTre.
 A tale scopo, sono state eseguite le seguenti istruzioni:
 
-## Compilare ogni servizio
+### Compilare ogni servizio
 
 Lo script `./build-all-projects.sh` lancia gradle build in ognuna di esse.
 
-## Creare le immagini docker
+### Creare le immagini docker
 
 Lo script `./build-all-images.sh` lancia docker build in ogni cartella.
 
-## Eseguire il push delle immagini docker.
+### Eseguire il push delle immagini docker.
 
 Lo script `./push-all-images.sh` lancia docker push per ogni immagine sullo swarm.
 
-## Avviare lo stack
+### Avviare lo stack
 
 Lo script `./start-infoUni-stack.sh` lancia docker stack deploy.
     
