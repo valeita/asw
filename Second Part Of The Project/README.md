@@ -73,6 +73,8 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
     gradle build
     ./run-course-service.sh
     
+    
+    
 In alternativa:
 
 Posizionarsi della cartella Software Architecture's Project
