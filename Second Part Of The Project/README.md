@@ -1,6 +1,14 @@
 # ASW
 Repository di Architetture Software
 
+* [Descrizione del secondo progetto](#descrizione-del-secondo-progetto)
+4	
+5	* [Build](#build)
+6	
+7	* [Uso dei servizi](#uso-dei-servizi)
+
+
+
 ## Descrizione seconda parte del progetto:
 
 Lo scopo di questa seconda parte del progetto si occupa della modifica dell'applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
