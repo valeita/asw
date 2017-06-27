@@ -8,10 +8,11 @@ Repository di Architetture Software
 ## Descrizione seconda parte del progetto:
 
 Lo scopo di questa seconda parte del progetto si occupa della modifica dell'applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
+Per concludere, tale applicazione è stata rilasciata sullo swarm dell'università di RomaTre.
 
 ## Tecnologie:
 
-La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del progetto Spring Cloud quali:
+La modifica in questione, tratta l'aggiunta di nuovi elementi facenti parte del progetto Spring Cloud Netflix quali:
 * Eureka, per implementare la funzionalità di service discovery dei servizi.
 * Ribbon, per implementare le funzionalità di load balancer.
 * Feign, per semplificare la scrittura del codice, in particolare delle chiamate REST.
@@ -39,7 +40,7 @@ Ciascun servizio è realizzato come una applicazione separata e indipendente dag
 il codice relativo a Ribbon nel servizio principale S è stato lasciato inalterato, e volontariamente non decommentato, cosi come i relativi import vari, in quanto era stato richiesto di mostrare il nostro lavoro riguardante quella parte.
 Infatti il codice è stato modificato e sviluppato in maniera incrementale pur sapendo in anticipo che l'utilizzo di Feign avrebbe permesso la semplificazione del codice a tal punto.
 
-## Info generali:
+## Struttura (cartelle):
 
 Il progetto è costituito da una cartella principale "Software Architecture's Project".
 Al suo interno sono contenute cinque sotto-cartelle:
