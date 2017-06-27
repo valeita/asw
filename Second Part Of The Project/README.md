@@ -1,7 +1,7 @@
 # ASW
 Repository di Architetture Software
 
-* [Descrizione seconda parte del progetto](Descrizione-seconda-parte-del-progetto)
+* [Descrizione seconda parte del progetto](#Descrizione-seconda-parte-del-progetto)
 
 
 ## Descrizione seconda parte del progetto:
