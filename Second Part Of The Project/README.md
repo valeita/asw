@@ -34,7 +34,7 @@ Ciascuno dei servizi è realizzato come una applicazione Spring Boot separata, i
 
 Ciascun servizio è realizzato come una applicazione separata e indipendente dagli altri servizi.
 
-### Note
+## Note
 
 il codice relativo a Ribbon nel servizio principale S è stato lasciato inalterato, e volontariamente non decommentato, cosi come i relativi import vari, in quanto era stato richiesto di mostrare il nostro lavoro riguardante quella parte.
 Infatti il codice è stato modificato e sviluppato in maniera incrementale pur sapendo in anticipo che l'utilizzo di Feign avrebbe permesso la semplificazione del codice a tal punto.
