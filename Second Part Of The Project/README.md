@@ -161,7 +161,13 @@ http://localhost:8080/info/course/romaTre/Ingegneria
 http://localhost:8080/info/course/romaTre/Ingegneria/Architetture
 * 6
 
-
+    `./build-all-projects.sh
+    
+    `./build-all-images.sh
+    
+    `./push-all-images.sh
+    
+    `./start-infoUni-stack.sh
 Il servizio infoUni deve rispondere al suo client usufruendo dei servizi university, faculty e course integrando le loro risposte.
 
 ## Rilascio:
@@ -173,10 +179,13 @@ A tale scopo, sono state eseguite le seguenti istruzioni:
 2) Avviare il demone Docker.
 3) Posizionarsi nella cartella Second Part Of The Project ed eseguire i seguenti script.
 
-    `./build-all-projects.sh
-    `./build-all-images.sh
-    `./push-all-images.sh
-    `./start-infoUni-stack.sh
+   `./build-all-projects.sh
+    
+    ./build-all-images.sh
+    
+    ./push-all-images.sh
+    
+    ./start-infoUni-stack.sh`
     
    
     
