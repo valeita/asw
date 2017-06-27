@@ -3,12 +3,12 @@ Repository di Architetture Software
 
 * [Descrizione seconda parte del progetto](#descrizione-seconda-parte-del-progetto)
 * [Build](#build)
-* [Casi d'uso](#casi-d'uso)
+* [Rilascio](#rilascio)
 
 ## Descrizione seconda parte del progetto:
 
-Lo scopo di questa seconda parte del progetto si occupa della modifica dell'applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
-Per concludere, tale applicazione è stata rilasciata sullo swarm dell'università di RomaTre.
+Lo scopo di questa seconda parte del progetto è la modifica dell'applicazione distribuita realizzata nella prima parte del progetto, composta da alcuni servizi stateless, che comunicano tra loro tramite invocazioni remote con REST.
+Per concludere, tale applicazione dovrà essere rilasciata sullo swarm dell'università di RomaTre.
 
 ## Tecnologie:
 
@@ -24,9 +24,9 @@ Parte fondamentale per la realizzazione della seconda parte del progetto, è l'u
 ## Applicazione e servizi:
 
 Questa seconda parte del progetto è ancora composta da:
-* Un servizio principale S, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
-* Due o più servizi secondari (S1, S2, ...), che possono ricevere richieste dal servizio principale S e che possono scambiarsi richieste tra di loro.
-* In aggiunta, sarà presente un server Eureka che implementa le funzionalità di service discovery, e permetterà ai vari servizi (S,S1,S2,S3) di scoprirsi tra loro.
+* Un servizio principale infoUni, che può ricevere richieste da un client HTTP/REST esterno, ed in particolare da un qualunque browser web, e può effettuare richieste ai suoi servizi secondari (descritti qui sotto).
+* Due o più servizi secondari (University, Faculty, Course), che possono ricevere richieste dal servizio principale S e che possono scambiarsi richieste tra di loro.
+* In aggiunta, sarà presente un server Eureka che implementa le funzionalità di service discovery, e permetterà ai vari servizi (infoUni,University, Faculty, Course) di scoprirsi tra loro.
   
 In questo secondo progetto, i diversi servizi vanno ancora mandati in esecuzione tutti in uno stesso nodo (host), ma in application server Tomcat separati, collegati a porte diverse. In particolare, il servizio principale S è esposto sulla porta 8080, i servizi secondari questa volta su delle porte casuali.
 Inoltre, il server Eureka, sarà esposto sulla porta 8761. I vari sottoservizi, pur essendo esposti su porte casuali, riescono a comunicare con il servizio principale grazie a Eureka che permette ai servizi di localizzarsi.
