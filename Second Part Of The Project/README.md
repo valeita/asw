@@ -3,7 +3,7 @@ Repository di Architetture Software
 
 * [Descrizione seconda parte del progetto](#descrizione-seconda-parte-del-progetto)
 * [Build](#build)
-* [Casi d'uso](#casi-d-uso)
+* [Casi d'uso](#casi-d'uso)
 
 ## Descrizione seconda parte del progetto:
 
@@ -107,7 +107,8 @@ http://localhost:8080/infoUni/romaTre
 Il servizio infoUni va implementato come client di tre servizi secondari univeristy, faculty e course, con le caratteristiche descritte nel seguito.
 
 
-Per quanto riguarda i vari sottoservizi, è stato possibile grazie a Zuul, sviluppare l'applicazione garantendo un solo punto di accesso, quello sulla porta 8080 del servizio principale. Questo garantisce che non è possibile invocare le funzionalità dei miei sottoservizi (a meno che non si conosca la porta casuale) in modo diretto.
+Per quanto riguarda i vari sottoservizi, è stato possibile grazie a Zuul, sviluppare l'applicazione garantendo un solo punto di accesso, quello sulla porta 8080 del servizio principale.
+Questo ha garantito che non è possibile invocare le funzionalità dei vari sottoservizi (a meno che non si conosca la porta casuale) in modo diretto.
 
 è stato aggiunto il prefisso **/_info_** nel file yaml del servizio principale, per distinguere l'invocazione di un sottoservizio rispetto al servizio principale.
 Ogni sottoservizio è inoltre mappato in automatico in questo modo **/_Nome_Servizio_**.
