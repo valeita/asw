@@ -2,10 +2,10 @@
 Repository di Architetture Software
 
 * [Descrizione del secondo progetto](#descrizione-del-secondo-progetto)
-4	
-5	* [Build](#build)
-6	
-7	* [Uso dei servizi](#uso-dei-servizi)
+	
+* [Build](#build)
+
+* [Uso dei servizi](#uso-dei-servizi)
 
 
 
