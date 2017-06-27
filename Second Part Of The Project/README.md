@@ -34,7 +34,9 @@ Ciascuno dei servizi è realizzato come una applicazione Spring Boot separata, i
 
 Ciascun servizio è realizzato come una applicazione separata e indipendente dagli altri servizi.
 
-N.B: il codice relativo a Eureka e Ribbon nel servizio principale S è stato lasciato inalterato, e volontariamente non decommentato, cosi come i relativi import vari, in quanto era stato richiesto di mostrare il nostro lavoro riguardante quella parte.
+### Note
+
+il codice relativo a Ribbon nel servizio principale S è stato lasciato inalterato, e volontariamente non decommentato, cosi come i relativi import vari, in quanto era stato richiesto di mostrare il nostro lavoro riguardante quella parte.
 Infatti il codice è stato modificato e sviluppato in maniera incrementale pur sapendo in anticipo che l'utilizzo di Feign avrebbe permesso la semplificazione del codice a tal punto.
 
 ## Info generali:
@@ -114,7 +116,7 @@ Questo ha garantito che non è possibile invocare le funzionalità dei vari sott
 Ogni sottoservizio è inoltre mappato in automatico in questo modo **/_Nome_Servizio_**.
 L'invocazione di un sottoservizio tramite Zuul, ha acquisito dunque questa forma **/_info_/_Nome_Sottoservizio_/<..>/<..>/..**
 
-### Il sottoservizio University:
+### Il servizio University:
 
 Il servizio university fornisce informazioni (sempre casuali) relative all' università. Il servizio university fornisce una sola operazione:
 
@@ -126,7 +128,7 @@ http://localhost:8080/info/university/romaTre
 * 1088
 
 
-### Il sottoservizio Faculty:
+### Il servizio Faculty:
 
 il servizio faculty fornisce informazioni (sempre casuali) relative alle facoltà presenti in una certa università, e al loro numero di esami. il servizio faculty fornisce due operazioni:
 
@@ -143,7 +145,7 @@ http://localhost:8080/info/faculty/romaTre/Ingegneria
 * 13
 
 
-### Il sottoservizio Course:
+### Il servizio Course:
 
 il servizio course fornisce informazioni (sempre casuali) relative ai corsi presenti in una certa università o facoltà. il servizio faculty fornisce due operazioni:
 
@@ -161,3 +163,5 @@ http://localhost:8080/info/course/romaTre/Ingegneria/Architetture
 
 
 Il servizio infoUni deve rispondere al suo client usufruendo dei servizi university, faculty e course integrando le loro risposte.
+
+## Rilascio:
