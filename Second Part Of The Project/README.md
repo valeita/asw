@@ -167,26 +167,14 @@ Il servizio infoUni deve rispondere al suo client usufruendo dei servizi univers
 ## Rilascio:
 
 L'applicazione è stata rilasciata nello swarm dell'università di RomaTre.
-Le istruzioni da eseguire per tale scopo sono:
+A tale scopo, sono state eseguite le seguenti istruzioni:
+
+1) Scaricare e installare Docker.
+2) Avviare il demone Docker.
+3) Posizionarsi nella cartella Second Part Of The Project ed eseguire i seguenti script.
+    
+    ./build-all-images.sh
+    ./push-all-images.sh
+    ./start-infoUni-stack.sh
 
 
-    `./build-all-images.sh
-    `./push-all-images.sh
-    `./start-infoUni-stack.sh
-### Compilare ogni servizio
-
-
-4 hours ago @zubiak added tmp-README.md	
-67	 
-68	Ogni servizio ha un'omonima cartella all'interno di *Software Architecture's Project*. 
-69	
-70	Lo script `./build-all-projects.sh` lancia `gradle build` in ognuna di esse.
-71	
-4 hours ago @zubiak updated tmp-README.md	
-72	### Creare le immagini docker
-4 hours ago @zubiak added tmp-README.md	
-73	
-74	Lo script `./build-all-images.sh` lancia `docker build` in ogni cartella.
-75	
-76	<span style="color:red">**(QUI DOVREMMO DIRE CHE LE APPLICAZIONI COMPILATE POSSONO FUNZIONARE ANCHE PER CONTO LORO, IN LOCALE. IDEM PER LE IMMAGINI DOCKER. E POI MAGARI DOVREMMO AGGIUNGERE CHE USIAMO `./push-all-images.sh` e `./start...sh` e `./stop...sh` PER PUSHARE, AVVIARE E STOPPARE I SERVIZI SULLO SWARM)**</span>
-77	
