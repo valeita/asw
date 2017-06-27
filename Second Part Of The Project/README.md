@@ -74,9 +74,7 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
 
     gradle build
     ./run-course-service.sh
-    
-    
-    
+       
 In alternativa:
 
 Posizionarsi della cartella Software Architecture's Project
@@ -161,13 +159,6 @@ http://localhost:8080/info/course/romaTre/Ingegneria
 http://localhost:8080/info/course/romaTre/Ingegneria/Architetture
 * 6
 
-    `./build-all-projects.sh
-    
-    `./build-all-images.sh
-    
-    `./push-all-images.sh
-    
-    `./start-infoUni-stack.sh
 Il servizio infoUni deve rispondere al suo client usufruendo dei servizi university, faculty e course integrando le loro risposte.
 
 ## Rilascio:
