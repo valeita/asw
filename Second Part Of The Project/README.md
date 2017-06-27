@@ -162,7 +162,7 @@ http://localhost:8080/info/course/romaTre/Ingegneria/Architetture
 
 Il servizio infoUni deve rispondere al suo client usufruendo dei servizi university, faculty e course integrando le loro risposte.
 
-### Rilascio:
+## Rilascio:
 
 L'applicazione è stata rilasciata nello swarm dell'università di RomaTre.
 A tale scopo, sono state eseguite le seguenti istruzioni:
