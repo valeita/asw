@@ -3,7 +3,7 @@ Repository di Architetture Software
 
 
 
-* [Descrizione del secondo progetto](#descrizione-del-secondo-progetto)
+* [Descrizione della seconda parte del progetto](#Descrizione-della-seconda-parte-del-progetto)
 	
 * [Build](#build)
 
