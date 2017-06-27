@@ -1,7 +1,7 @@
 # ASW
 Repository di Architetture Software
 
-* [Descrizione del secondo progetto](#descrizione-del-secondo-progetto)
+* [Descrizione seconda parte del progetto](Descrizione-seconda-parte-del-progetto)
 
 
 ## Descrizione seconda parte del progetto:
@@ -68,7 +68,7 @@ Posizionarsi nella cartella principale del servizio CourseService ed eseguire:
     gradle build
     ./run-course-service.sh
     
-* [Descrizione del secondo progetto](#descrizione-del-secondo-progetto)
+
 ## Casi d'uso:
 
 ### Il servizio principali InfoUni:
